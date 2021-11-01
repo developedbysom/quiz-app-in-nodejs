@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "e20b5a16-82d1-41ca-ba7a-0c41fbe2a2b3",
+		"name": "Quiz-question-ans",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Quiz",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"My Quiz\",\r\n    \"instructions\": \"Instructions goes here\",\r\n    \"isEnabled\": true,\r\n    \"questions\": [\r\n        {\r\n            \"question\": \"What is capital of AP\",\r\n            \"answers\": [\r\n                {\r\n                    \"option\": \"new york\"\r\n                },\r\n                {\r\n                    \"option\": \"Bombay\"\r\n                },\r\n                {\r\n                    \"option\": \"Vijayawada\"\r\n                },\r\n                {\r\n                    \"option\": \"noida\"\r\n                }\r\n            ],\r\n            \"answer\": 2,\r\n            \"isEnabled\": true,\r\n            \"explanation\": \"Something\"\r\n        },\r\n        {\r\n            \"question\": \"What is capital of us\",\r\n            \"answers\": [\r\n                {\r\n                    \"option\": \"new york\"\r\n                },\r\n                {\r\n                    \"option\": \"dc\"\r\n                },\r\n                {\r\n                    \"option\": \"qwer\"\r\n                },\r\n                {\r\n                    \"option\": \"mumbai\"\r\n                }\r\n            ],\r\n            \"answer\": 2,\r\n            \"isEnabled\": true,\r\n            \"explanation\": \"Something\"\r\n        }\r\n    ],\r\n    \"duration\": {\r\n        \"hours\": 10,\r\n        \"minutes\": 20,\r\n        \"seconds\": 30\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quizes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update quiz against id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instructions\": \"Instructions are updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/quizes/617f96169ebea72cd4b53def",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizes",
+						"617f96169ebea72cd4b53def"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get quiz id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quizes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a question against a question id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quizes/617f96169ebea72cd4b53def/questions/617f96169ebea72cd4b53df0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizes",
+						"617f96169ebea72cd4b53def",
+						"questions",
+						"617f96169ebea72cd4b53df0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a question",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/quizes/617f96169ebea72cd4b53def/questions/617f96169ebea72cd4b53df0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"quizes",
+						"617f96169ebea72cd4b53def",
+						"questions",
+						"617f96169ebea72cd4b53df0"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
